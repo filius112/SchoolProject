@@ -47,6 +47,7 @@ namespace KeyDown
                         Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 20);
                         break;
 
+                        //komentář
                 }
 
             };
