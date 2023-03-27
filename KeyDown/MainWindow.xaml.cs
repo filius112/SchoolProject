@@ -43,17 +43,15 @@ namespace KeyDown
                     case Key.S:
                         Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) + 20);
                         break;
-                    case Key.D:
+                        case Key.D:
                         Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 20);
                         break;
-                    default:
-                        MessageBox.Show(e.Key.ToString());
-                        break;
+
                 }
 
             };
         }
-
+               
         private void Elipsa_KeyDown(object sender, KeyEventArgs e)
         {
             
