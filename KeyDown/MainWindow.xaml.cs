@@ -31,36 +31,39 @@ namespace KeyDown
             
             InitializeComponent();
 
+
+
             this.KeyDown += (s, e) =>
             {
                 var klavesa = e.Key;
                 switch (klavesa)
                 {
-                    case Key.Space | Key.D:
-                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa)+40);
-                        break;
                     case Key.W:
-                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) - 20);
+                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) - 10);
+                        
                         break;
                     case Key.A:
-                      Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) - 20);
+                      Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) - 10);
                         break;
                     case Key.S:
-                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) + 20);
+                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) + 10);
                         break;
                         case Key.D:
-                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 20);
+                        
+                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 10);
                         break;
                 }
 
             };
         }
-               
-        private void Elipsa_KeyDown(object sender, KeyEventArgs e)
+        
+        private void Collision()
         {
-            
-
+            if ((Elipsa.))
+            {
+            }
         }
+
         private void Change()
         {
             Canvas.SetTop(Elipsa, Left);

@@ -5,16 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyDown"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Canvas>
-        <Ellipse
+        Title="MainWindow" Height="486" Width="820">
+    <Canvas 
+        HorizontalAlignment="Center"
+        Width="820" Height="440" VerticalAlignment="Bottom">
+
+
+        <Border BorderBrush="DarkGoldenrod"
+                BorderThickness="3" 
+                Height="430"
+                Canvas.Left="10"
+                Width="800"
+                x:Name="brdr">
+            <Canvas HorizontalAlignment="Left"
+                    Width="794" Height="434"
+                    VerticalAlignment="Top" Margin="3,-17,0,0">
+                <Ellipse
             Height="100" 
             Canvas.Left="341" 
             Stroke="Black"
             Canvas.Top="154" 
             Width="100"
-            x:Name="Elipsa"
-            KeyDown="Elipsa_KeyDown"/>
+            x:Name="Elipsa"/>
+            </Canvas>
+        </Border>
+
+
+
+
 
     </Canvas>
+
 </Window>
