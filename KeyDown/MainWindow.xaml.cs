@@ -59,7 +59,8 @@ namespace KeyDown
         
         private void Collision()
         {
-            if ((Elipsa.))
+            int i = 0;
+            if (i == 0)
             {
             }
         }
