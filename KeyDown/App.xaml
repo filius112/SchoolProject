@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:KeyDown"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+        <FontFamily x:Key="Count">./Fonts/DarumadropOne-Regular.ttf#Darumadrops</FontFamily>
+    </Application.Resources> 
 </Application>

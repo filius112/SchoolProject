@@ -28,62 +28,25 @@ namespace KeyDown
          DispatcherTimer hod = new DispatcherTimer();
             hod.Interval = new TimeSpan(0,0, 6/3);
 
-            
+
             InitializeComponent();
-
-
-
-            this.KeyDown += (s, e) =>
-            {
-                var klavesa = e.Key;
-                switch (klavesa)
-                {
-                    case Key.W:
-                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) - 10);
-                        
-                        break;
-                    case Key.A:
-                      Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) - 10);
-                        break;
-                    case Key.S:
-                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) + 10);
-                        break;
-                        case Key.D:
-                        
-                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 10);
-                        break;
-
-                    case Key.Up:
-                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) - 10);
-
-                        break;
-                    case Key.Left:
-                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) - 10);
-                        break;
-                    case Key.Down:
-                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) + 10);
-                        break;
-                    case Key.Right:
-
-                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 10);
-                        break;
-                }
-
-            };
         }
-        
-        private void Collision()
+
+        int score = 0;
+
+        private void main_Click(object sender, RoutedEventArgs e)
+        {
+            score += 1;
+
+            Count.Text = score.ToString();
+        }
+
+        private async void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             int i = 0;
-            if (i == 0)
-            {
-                Elipsa
-            }
-        }
+            await Task.Delay(1000);
 
-        private void Change()
-        {
-            Canvas.SetTop(Elipsa, Left);
+            Count.Text = score.ToString();
         }
     }
 }

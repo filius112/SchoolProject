@@ -5,38 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyDown"
         mc:Ignorable="d"
-        Title="MainWindow" Height="486" Width="820">
-    <Canvas 
-        HorizontalAlignment="Center"
-        Width="820" Height="440" VerticalAlignment="Bottom">
+        Title="MainWindow" Height="600" Width="500">
+
+    <Grid>
+        <Button 
+            x:Name="mainClick"
+            Content="Click me!!" 
+                HorizontalAlignment="Center" 
+                Margin="0,420,0,0" 
+                VerticalAlignment="Top"
+            Click="main_Click" Height="74" Width="120"/>
+        <TextBox 
+            x:Name="Count"
+            HorizontalAlignment="Center" 
+            Margin="0,86,0,0" 
+            TextWrapping="Wrap"
+            Text="12"
+            TextAlignment="Center"
+            VerticalAlignment="Top"
+            BorderThickness="0"
+            Width="230" Height="80"
+            FontSize="60"
+            FontFamily="{StaticResource Count}"/>
+        <RadioButton 
+            Content="AutoClicker" 
+            HorizontalAlignment="Left" 
+            Margin="75,516,0,0" 
+            VerticalAlignment="Top" Checked="RadioButton_Checked"/>
 
 
-        <Border BorderBrush="DarkGoldenrod"
-                BorderThickness="3" 
-                Height="430"
-                Canvas.Left="10"
-                Width="800"
-                x:Name="brdr">
-            <Canvas HorizontalAlignment="Left"
-                    Width="794" Height="434"
-                    VerticalAlignment="Top" Margin="3,-17,0,0">
-                <Ellipse
-            Height="100" 
-            Canvas.Left="341" 
-            Stroke="Black"
-            Canvas.Top="154" 
-            Width="100"
-            x:Name="Elipsa">
-                    
-                    
-                </Ellipse>
-            </Canvas>
-        </Border>
 
 
 
+    </Grid>
 
-
-    </Canvas>
-
+    
 </Window>
