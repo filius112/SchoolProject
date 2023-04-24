@@ -52,6 +52,21 @@ namespace KeyDown
                         
                         Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 10);
                         break;
+
+                    case Key.Up:
+                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) - 10);
+
+                        break;
+                    case Key.Left:
+                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) - 10);
+                        break;
+                    case Key.Down:
+                        Canvas.SetTop(Elipsa, Canvas.GetTop(Elipsa) + 10);
+                        break;
+                    case Key.Right:
+
+                        Canvas.SetLeft(Elipsa, Canvas.GetLeft(Elipsa) + 10);
+                        break;
                 }
 
             };
@@ -62,6 +77,7 @@ namespace KeyDown
             int i = 0;
             if (i == 0)
             {
+                Elipsa
             }
         }
 

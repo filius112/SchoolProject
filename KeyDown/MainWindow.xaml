@@ -26,7 +26,10 @@
             Stroke="Black"
             Canvas.Top="154" 
             Width="100"
-            x:Name="Elipsa"/>
+            x:Name="Elipsa">
+                    
+                    
+                </Ellipse>
             </Canvas>
         </Border>
 
