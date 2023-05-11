@@ -9,29 +9,83 @@
 
     <Grid>
         <Button 
-            x:Name="mainClick"
-            Content="Click me!!" 
+            x:Name="startButton"
+            Content="Time Start" 
                 HorizontalAlignment="Center" 
-                Margin="0,420,0,0" 
+                Margin="0,507,0,0" 
                 VerticalAlignment="Top"
-            Click="main_Click" Height="74" Width="120"/>
-        <TextBox 
-            x:Name="Count"
+            Click="startButton_Click" Height="27" Width="96"/>
+        <TextBlock 
+            x:Name="Counter"
             HorizontalAlignment="Center" 
             Margin="0,86,0,0" 
             TextWrapping="Wrap"
-            Text="12"
+            Text="0"
             TextAlignment="Center"
             VerticalAlignment="Top"
-            BorderThickness="0"
-            Width="230" Height="80"
+            Width="152" Height="80"
             FontSize="60"
-            FontFamily="{StaticResource Count}"/>
-        <RadioButton 
-            Content="AutoClicker" 
+            FontWeight="Bold"
+            />
+        <Label 
+            x:Name="laabel"
+            Content="0" 
+            FontWeight="Bold"
+            FontSize="15"
+            HorizontalAlignment="Left"
+            Margin="224,0,0,0" 
+            VerticalAlignment="Center" RenderTransformOrigin="1.027,0.603"/>
+        <Button 
+            x:Name="Jitter"
+            Content="Click Here!"
+            HorizontalAlignment="Center"
+            Margin="0,420,0,0" 
+            FontSize="25"
+            FontWeight="Bold"
+            VerticalAlignment="Top"
+            Height="82" Width="150" Click="Jitter_Click"/>
+        <Label 
+            Content="High Score:" 
             HorizontalAlignment="Left" 
-            Margin="75,516,0,0" 
-            VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+            Margin="25,35,0,0" 
+            FontSize="15"
+            FontWeight="Bold"
+            VerticalAlignment="Top"/>
+        <Label 
+            Content="Seconds" 
+            HorizontalAlignment="Left"
+            Margin="238,0,0,0"
+            FontWeight="Bold"
+            FontSize="15"
+            VerticalAlignment="Center"/>
+        <TextBlock 
+            x:Name="hiscore"
+            HorizontalAlignment="Left" 
+            TextWrapping="Wrap" 
+            Text="0 clicks/s"
+            TextAlignment="Left"
+            Padding="10, 0"
+            FontWeight="Bold"
+            FontSize="18"
+            Margin="111,37,0,0"
+            VerticalAlignment="Top"/>
+        <Label 
+            x:Name="CurrentScore" 
+            Content="Score: " 
+            HorizontalAlignment="Left"
+            Margin="30,86,0,0"
+            FontSize="15"
+            FontWeight="Bold"
+            VerticalAlignment="Top"/>
+        <TextBlock 
+            x:Name="cps" 
+            HorizontalAlignment="Left"
+            Margin="90,88,0,0" 
+            TextWrapping="Wrap" 
+            Text="0 clicks/s" 
+            FontWeight="Bold"
+            VerticalAlignment="Top" 
+            FontSize="18"/>
 
 
 
@@ -39,5 +93,5 @@
 
     </Grid>
 
-    
+
 </Window>
