@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyDown"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="500">
+        Title="JitterClick" Height="600" Width="500" ResizeMode="NoResize">
 
     <Grid>
         <Button 
             x:Name="startButton"
             Content="Time Start" 
                 HorizontalAlignment="Center" 
-                Margin="0,507,0,0" 
+                Margin="0,513,0,0" 
                 VerticalAlignment="Top"
             Click="startButton_Click" Height="27" Width="96"/>
         <TextBlock 
@@ -33,17 +33,17 @@
             FontWeight="Bold"
             FontSize="15"
             HorizontalAlignment="Left"
-            Margin="224,0,0,0" 
-            VerticalAlignment="Center" RenderTransformOrigin="1.027,0.603"/>
+            Margin="226,239,0,0" 
+            VerticalAlignment="Top" RenderTransformOrigin="1.027,0.603"/>
         <Button 
             x:Name="Jitter"
             Content="Click Here!"
             HorizontalAlignment="Center"
-            Margin="0,420,0,0" 
+            Margin="0,328,0,0" 
             FontSize="25"
             FontWeight="Bold"
             VerticalAlignment="Top"
-            Height="82" Width="150" Click="Jitter_Click"/>
+            Height="180" Width="350" Click="Jitter_Click"/>
         <Label 
             Content="High Score:" 
             HorizontalAlignment="Left" 
@@ -54,10 +54,10 @@
         <Label 
             Content="Seconds" 
             HorizontalAlignment="Left"
-            Margin="238,0,0,0"
+            Margin="241,239,0,0"
             FontWeight="Bold"
             FontSize="15"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Top"/>
         <TextBlock 
             x:Name="hiscore"
             HorizontalAlignment="Left" 

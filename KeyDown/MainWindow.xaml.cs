@@ -60,9 +60,8 @@ namespace KeyDown
             {
                 conn.Open();
                 string cmd = "INSERT INTO Saves(score)VALUES" +
-                    "(20)," +
-                    "(29)," +
-                    "(31);";
+                    "(5)," +
+                    "(10);";
                 SQLiteCommand CMD = new SQLiteCommand(cmd, conn);
                 CMD.ExecuteNonQuery();
                 conn.Close();
@@ -111,7 +110,6 @@ namespace KeyDown
 
         double score = 0;
 
-
         public MainWindow()
         {
             CreateDB();
@@ -143,9 +141,9 @@ namespace KeyDown
                 startButton.IsEnabled = true; // Re-enable the button
                 count = 0;
                 Jitter.IsEnabled = false;
-                hiscore.Text = (score/10 + " clicks/s").ToString();
                 cps.Text = (score / 10 + " clicks/s").ToString();
                 UpdateHiscore();
+           
                 
             }
 
@@ -168,6 +166,13 @@ namespace KeyDown
             // Update the TextBlock with the current count
             laabel.Content = count.ToString();
 
+            double currentCPS = double.Parse(cps.Text.Split(' ')[0]);
+            double currentHiScore = double.Parse(hiscore.Text.Split(' ')[0]);
+
+            if (currentCPS > currentHiScore)
+            {
+                hiscore.Text = cps.Text;
+            }
         }
 
         private void startButton_Click(object sender, RoutedEventArgs e)
@@ -186,7 +191,7 @@ namespace KeyDown
 
         private void Jitter_Click(object sender, RoutedEventArgs e)
         {
-            score++;
+            score ++;
 
             Counter.Text = score.ToString();
         }
