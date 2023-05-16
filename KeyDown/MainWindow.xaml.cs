@@ -114,7 +114,7 @@ namespace KeyDown
         {
             CreateDB();
           //DeleteDB();
-            SeedData();
+           SeedData();
             Saves = ObtainData();
             InitializeComponent();
             UpdateHiscore();
