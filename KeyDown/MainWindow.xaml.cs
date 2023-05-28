@@ -21,6 +21,7 @@ using System.IO;
 using System.Configuration;
 using System.Xml.Linq;
 using KeyDown.Models;
+using System.Windows.Media.Animation;
 
 namespace KeyDown
 {
@@ -110,11 +111,13 @@ namespace KeyDown
 
         double score = 0;
 
+
+
         public MainWindow()
         {
             CreateDB();
-          //DeleteDB();
-           SeedData();
+            //DeleteDB();
+            SeedData();
             Saves = ObtainData();
             InitializeComponent();
             UpdateHiscore();
@@ -129,7 +132,8 @@ namespace KeyDown
 
         }
 
-         void DispatcherTimer_Tick(object sender, EventArgs e)
+
+        void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             // Increment the count
             count++;
@@ -172,7 +176,9 @@ namespace KeyDown
             if (currentCPS > currentHiScore)
             {
                 hiscore.Text = cps.Text;
+                MessageBox.Show("New High Score! Congrats!", "NEW HIGH SCORE", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            
         }
 
         private void startButton_Click(object sender, RoutedEventArgs e)

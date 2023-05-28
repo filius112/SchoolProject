@@ -6,16 +6,43 @@
         xmlns:local="clr-namespace:KeyDown"
         mc:Ignorable="d"
         Title="JitterClick" Height="600" Width="500" ResizeMode="NoResize">
+    
+    <Window.Resources>
+        <Style x:Key="HoverEffectStyle" TargetType="Button">
+            <Setter Property="Background" Value="Red" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFFF4600" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
 
-    <Grid>
+    <Grid x:Name="myGrid" Background="Black">
         <Button 
+            Style="{StaticResource HoverEffectStyle}"
             x:Name="startButton"
             Content="Time Start" 
                 HorizontalAlignment="Center" 
                 Margin="0,513,0,0" 
                 VerticalAlignment="Top"
-            Click="startButton_Click" Height="27" Width="96"/>
+            Click="startButton_Click" 
+            Height="27" Width="96"/>
         <TextBlock 
+            Foreground="White"
             x:Name="Counter"
             HorizontalAlignment="Center" 
             Margin="0,86,0,0" 
@@ -28,15 +55,18 @@
             FontWeight="Bold"
             />
         <Label 
+            Foreground="White"
             x:Name="laabel"
             Content="0" 
             FontWeight="Bold"
             FontSize="15"
             HorizontalAlignment="Left"
             Margin="226,239,0,0" 
-            VerticalAlignment="Top" RenderTransformOrigin="1.027,0.603"/>
+            VerticalAlignment="Top" 
+            RenderTransformOrigin="1.027,0.603"/>
         <Button 
             x:Name="Jitter"
+            Style="{StaticResource HoverEffectStyle}"
             Content="Click Here!"
             HorizontalAlignment="Center"
             Margin="0,328,0,0" 
@@ -45,6 +75,7 @@
             VerticalAlignment="Top"
             Height="180" Width="350" Click="Jitter_Click"/>
         <Label 
+            Foreground="White"
             Content="High Score:" 
             HorizontalAlignment="Left" 
             Margin="25,35,0,0" 
@@ -52,6 +83,7 @@
             FontWeight="Bold"
             VerticalAlignment="Top"/>
         <Label 
+            Foreground="White"
             Content="Seconds" 
             HorizontalAlignment="Left"
             Margin="241,239,0,0"
@@ -59,6 +91,7 @@
             FontSize="15"
             VerticalAlignment="Top"/>
         <TextBlock 
+            Foreground="White"
             x:Name="hiscore"
             HorizontalAlignment="Left" 
             TextWrapping="Wrap" 
@@ -70,6 +103,7 @@
             Margin="111,37,0,0"
             VerticalAlignment="Top"/>
         <Label 
+            Foreground="White"
             x:Name="CurrentScore" 
             Content="Score: " 
             HorizontalAlignment="Left"
@@ -78,6 +112,7 @@
             FontWeight="Bold"
             VerticalAlignment="Top"/>
         <TextBlock 
+            Foreground="White"
             x:Name="cps" 
             HorizontalAlignment="Left"
             Margin="90,88,0,0" 
