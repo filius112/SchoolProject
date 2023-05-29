@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KeyDown"
         mc:Ignorable="d"
         Title="JitterClick" Height="600" Width="500" ResizeMode="NoResize">
-    
+
     <Window.Resources>
         <Style x:Key="HoverEffectStyle" TargetType="Button">
             <Setter Property="Background" Value="Red" />
