@@ -30,12 +30,11 @@ namespace KeyDown
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        //DATABÁZE        
 
-        // Specify the name of the new database file
-        const string saveScore = "MyDatabase.db";
+        //Název databáze
+         const string saveScore = "MyDatabase.db";
 
-        // Create a new SQLite database file
 
         const string ConnectStr = $"Data Source={saveScore}; Version=3;";
 
@@ -62,7 +61,7 @@ namespace KeyDown
                 conn.Open();
                 string cmd = "INSERT INTO Saves(score)VALUES" +
                     "(5)," +
-                    "(10);";
+                    "(103);";
                 SQLiteCommand CMD = new SQLiteCommand(cmd, conn);
                 CMD.ExecuteNonQuery();
                 conn.Close();
@@ -106,7 +105,7 @@ namespace KeyDown
 
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
-        // Set the initial count to 0
+       
         int count = 0;
 
         double score = 0;
@@ -122,12 +121,13 @@ namespace KeyDown
             InitializeComponent();
             UpdateHiscore();
 
-            // Set the interval between timer ticks (in milliseconds)
+            // Nastaví interval mezi jedním taktem v časovači
             dispatcherTimer.Interval = TimeSpan.FromMilliseconds(1000);
 
-            // Set the event handler for the Tick event
+            
             dispatcherTimer.Tick += DispatcherTimer_Tick;
 
+            //Jitter button je deaktivovaný
             Jitter.IsEnabled = false;
 
         }
@@ -135,16 +135,16 @@ namespace KeyDown
 
         void DispatcherTimer_Tick(object sender, EventArgs e)
         {
-            // Increment the count
+            
             count++;
 
-            // If the count is greater than or equal to 10, stop the timer
+            //Podmínka, že pokud je count 10 nebo větší, tak se zastaví DispTimer
             if (count >= 10)
             {
                 dispatcherTimer.Stop();
-                startButton.IsEnabled = true; // Re-enable the button
+                startButton.IsEnabled = true; // startButton spouští čas. Tímto se aktivuje po tom, co byl během počítání deaktivovaný
                 count = 0;
-                Jitter.IsEnabled = false;
+                Jitter.IsEnabled = false; //Jitter je opět deaktivovaný, aby se nemohlo přičítat více skóre bez času a omezení
                 cps.Text = (score / 10 + " clicks/s").ToString();
                 UpdateHiscore();
            
@@ -167,7 +167,7 @@ namespace KeyDown
             }
 
 
-            // Update the TextBlock with the current count
+            //Aktualizuje laabel.Content s int count převedeným na string
             laabel.Content = count.ToString();
 
             double currentCPS = double.Parse(cps.Text.Split(' ')[0]);
@@ -184,11 +184,11 @@ namespace KeyDown
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
             
-            // Disable the button while the timer is running
+            //Deaktivace startButton buttonu a aktivace Jitter Buttonu. Je to z důvodu, aby se nemohlo klikat na startButton vícekrát, během toho co běží čas
             startButton.IsEnabled = false;
             Jitter.IsEnabled = true;
 
-            // Start the timer after 1 seconds
+            // Čas má interval 1 sekundu, což znamená, že než se spustí první sekunda, tak musí uběhnout 1 sekunda
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
             dispatcherTimer.Start();
             score = 0;
@@ -205,13 +205,14 @@ namespace KeyDown
         {
             if (Saves != null && Saves.Count > 0)
             {
-                // Obtain the saved data from the database
+                //Vytáhne data, které jsou uložené v "MyDatabase.db"
                 Saves = ObtainData();
 
-                // Calculate the highest score
+                // Vezme nejvyšší skóre
                 double highestScore = Saves.Max(s => s.score);
 
                 // Set the Text property of the hiscore label
+                //highestScore z "MyDatabase.db" bude vloženo do "hiscore.Text". Vždy to načte nejvyšší skóre, takže nikdy neztratíte pojem o tom, co je Vaše nejvyšší skóre
                 hiscore.Text = $"{highestScore/10} clicks/s";
             }
         }
