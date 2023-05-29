@@ -145,7 +145,7 @@ namespace KeyDown
                 startButton.IsEnabled = true; // startButton spouští čas. Tímto se aktivuje po tom, co byl během počítání deaktivovaný
                 count = 0;
                 Jitter.IsEnabled = false; //Jitter je opět deaktivovaný, aby se nemohlo přičítat více skóre bez času a omezení
-                cps.Text = (score / 10 + " clicks/s").ToString();
+                cps.Text = (score / 10 + " CPS").ToString();
                 UpdateHiscore();
            
                 
@@ -213,7 +213,7 @@ namespace KeyDown
 
                 // Set the Text property of the hiscore label
                 //highestScore z "MyDatabase.db" bude vloženo do "hiscore.Text". Vždy to načte nejvyšší skóre, takže nikdy neztratíte pojem o tom, co je Vaše nejvyšší skóre
-                hiscore.Text = $"{highestScore/10} clicks/s";
+                hiscore.Text = $"{highestScore/10} CPS";
             }
         }
 

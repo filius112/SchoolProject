@@ -95,7 +95,7 @@
             x:Name="hiscore"
             HorizontalAlignment="Left" 
             TextWrapping="Wrap" 
-            Text="0 clicks/s"
+            Text="0 CPS"
             TextAlignment="Left"
             Padding="10, 0"
             FontWeight="Bold"
@@ -117,7 +117,7 @@
             HorizontalAlignment="Left"
             Margin="90,88,0,0" 
             TextWrapping="Wrap" 
-            Text="0 clicks/s" 
+            Text="0 CPS" 
             FontWeight="Bold"
             VerticalAlignment="Top" 
             FontSize="18"/>
