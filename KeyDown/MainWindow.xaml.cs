@@ -211,7 +211,6 @@ namespace KeyDown
                 // Vezme nejvyšší skóre
                 double highestScore = Saves.Max(s => s.score);
 
-                // Set the Text property of the hiscore label
                 //highestScore z "MyDatabase.db" bude vloženo do "hiscore.Text". Vždy to načte nejvyšší skóre, takže nikdy neztratíte pojem o tom, co je Vaše nejvyšší skóre
                 hiscore.Text = $"{highestScore/10} CPS";
             }
