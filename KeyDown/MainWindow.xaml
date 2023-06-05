@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyDown"
         mc:Ignorable="d"
-        Title="JitterClick" Height="600" Width="500" ResizeMode="NoResize">
+        Title="CPS Calculator" Height="600" Width="500" ResizeMode="NoResize">
 
     <Window.Resources>
         <Style x:Key="HoverEffectStyle" TargetType="Button">
@@ -28,6 +28,10 @@
                     <Setter Property="Background" Value="#FFFF4600" />
                 </Trigger>
             </Style.Triggers>
+        </Style>
+        <Style x:Key="TransparentLabelStyle" TargetType="Label">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
         </Style>
     </Window.Resources>
 
@@ -72,33 +76,25 @@
             VerticalAlignment="Top"
             Height="180" Width="350" MouseLeftButtonDown="Jitter_Click"/>
         <Label
-            FontWeight="Bold"
-            Content="CLICK HERE!!"
-            Background="Transparent"
-            Height="25"
-            Width="80"
-            Foreground="White"
-            Margin="75,267,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label
-            Content="\"
+            Content="|"
             FontWeight="Bold"
             FontSize="25"
             Foreground="White"
-            Background="Transparent" Margin="132,275,0,0" Height="46" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33"/>
+            Background="Transparent" Margin="247,286,0,0" Height="46" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33"/>
 
         <Label
             Content=">"
             FontWeight="Bold"
             Background="Transparent"
             Foreground="White"
-            FontSize="25" Margin="135,285,0,0" 
+            FontSize="25" Margin="245,301,0,0" 
             RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="30" Height="42" VerticalAlignment="Top"
                 >
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="63.934"/>
+                    <RotateTransform Angle="87.921"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Label.RenderTransform>
@@ -150,6 +146,20 @@
             FontWeight="Bold"
             VerticalAlignment="Top" 
             FontSize="18"/>
+        <Label
+            Content="CLICK HERE!!"
+            HorizontalAlignment="Center"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            Margin="0,260,0,0" 
+            VerticalAlignment="Top" 
+            Height="44" Width="202"
+            Background="Transparent"
+            FontSize="25"
+            FontWeight="Bold"
+            Foreground="White"
+            
+            />
 
 
 

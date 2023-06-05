@@ -26,7 +26,7 @@ using System.Windows.Media.Animation;
 namespace KeyDown
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Počítá to CPS s databází.
     /// </summary>
     public partial class MainWindow : Window
     {
